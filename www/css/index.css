@@ -1,0 +1,17 @@
+@font-face {
+    font-family: samim;
+    src: url(../font/samim.woff);
+}
+* {
+    font-family: samim !important;
+}
+
+@media (min-width:28em){
+    .ui-field-contain > label {
+        float: right;
+    }
+}
+
+#srclanguage {
+    text-align: right;
+}

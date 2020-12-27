@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html dir="rtl">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;connect-src https://kiara-translate.p.rapidapi.com">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="css/jquery.mobile.min.css"/>
+        <link rel="stylesheet" href="css/index.css">
+        <script src="js/jquery-2.2.4.min.js"></script>
+        <script src="js/jquery.mobile.min.js"></script>
+        <script src="js/index.js"></script>
+        <title>Hello World</title>
+    </head>
+    <body>
+        <div data-role="page">
+            <div role="banner" data-role="header" data-position="fixed">
+                <h1 class="ui-title">ترجمند</h1>
+                <a href="#" id="menu" class="ui-nodisc-icon ui-alt-icon ui-btn ui-btn-corner-all ui-btn-left ui-mini ui-icon-bars ui-btn-icon-notext ui-btn-inline"></a>
+            </div>
+            <div role="main" class="ui-content">
+                <div class="ui-field-contain">
+                    <label for="srclanguage">زبان مبدأ</label>
+                    <input type="text" id="srclanguage" readonly="" value="خودکار">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="srctext">متن</label>
+                    <textarea id="srctext"></textarea>
+                </div>
+                <input type="button" value="ترجمه" class="ui-btn" id="translate" />
+                <div class="ui-field-contain">
+                    <label for="dstlanguage">زبان مقصد</label>
+                    <select id="dstlanguage" data-iconpos="left">
+                        <option value="en">انگلیسی</option>
+                        <option value="fa">فارسی</option>
+                        <option value="eo">اسپرانتو</option>
+                    </select>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="dsttext">متن</label>
+                    <textarea id="dsttext" readonly=""></textarea>
+                </div>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <div class="ui-navbar" data-role="navbar">
+                    <ul>
+                        <li>
+                            <a href="#" class="ui-icon-camera ui-nodisc-icon ui-alt-icon ui-btn ui-btn-corner-all ui-btn-icon-bottom ui-mini"></a>
+                        </li>
+                        <li>
+                            <a href="#" class="ui-icon-comment ui-nodisc-icon ui-alt-icon ui-btn ui-btn-corner-all ui-btn-icon-bottom ui-mini ui-btn-active"></a>
+                        </li>
+                        <li>
+                            <a href="#" class="ui-icon-audio ui-nodisc-icon ui-alt-icon ui-btn ui-btn-corner-all ui-btn-icon-bottom ui-mini"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>        
+    </body>
+</html>
