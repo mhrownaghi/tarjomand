@@ -30,7 +30,14 @@ function translate(dstlang, subject) {
       "x-rapidapi-host": "kiara-translate.p.rapidapi.com"
     },
     "processData": false,
-    "data": JSON.stringify(data)
+    "data": JSON.stringify(data),
+    beforeSend: function(xhr) {
+      $.mobile.loading("show", {
+        text: "در حال ترجمه",
+        textVisible: true,
+        theme: "a",
+      });
+    }
   };
 
   $.ajax(settings)
@@ -39,9 +46,11 @@ function translate(dstlang, subject) {
       src_lang = src_lang + ' - ' + getLanguageName(response.source_lang);
       $("#srclanguage").val(src_lang);
       $("#dsttext").val(response.translated);
+      $.mobile.loading("hide");
     })
     .fail(function() {
       $("#dsttext").val("مشکلی پیش آمده است!");
+      $.mobile.loading("hide");
     });
 
 }
@@ -49,10 +58,11 @@ function translate(dstlang, subject) {
 $(document).ready(function() {
   $(".ui-page").css("padding-top", "45px");
   $(".ui-page").css("padding-bottom", "42px");
-  $(".ui-page").css("min-height", "725px");
-  $("#translate").on("click", function() {
-    let dstlang = $("#dstlanguage").val();
-    let subject = $("#srctext").val();
-    translate(dstlang, subject);    
-  });
+  $(".ui-page").css("min-height", "725px");  
+});
+
+$(document).on("click", "#translate", function() {
+  let dstlang = $("#dstlanguage").val();
+  let subject = $("#srctext").val();
+  translate(dstlang, subject);
 });

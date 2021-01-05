@@ -15,3 +15,7 @@
 #srclanguage {
     text-align: right;
 }
+
+.ui-icon-loading {
+    background: url(../img/ajax-loader.gif);
+}
