@@ -1,18 +1,71 @@
-function getLanguageName(lang) {
-  let name = "";
-  switch (lang) {
-    case 'en':
-      name = 'انگلیسی';
-      break;
-    case 'fa':
-      name = 'فارسی';
-      break;
-    default:
-      name = '';
-      break;
-  }
-  return name;
-}
+  let languages = {
+    af: 'آفریقایی',
+    ar: 'عربی',
+    be: 'بلاروسی',
+    bg: 'بلغاری',
+    ca: 'کاتالانی',
+    cs: 'چکی',
+    cy: 'ولزی',
+    da: 'دانمارکی',
+    de: 'آلمانی',
+    el: 'یونانی',
+    en: 'انگلیسی',
+    eo: 'اسپرانتو',
+    es: 'اسپانیایی',
+    et: 'استونیایی',
+    eu: 'باسکی',
+    fa: 'فارسی',
+    fi: 'فنلاندی',
+    fr: 'فرانسوی',
+    gl: 'گالیسی',
+    gu: 'گجراتی',
+    he: 'عبری',
+    hi: 'هندی',
+    hr: 'کرواتی',
+    hu: 'مجاری',
+    hy: 'ارمنی',
+    id: 'اندونزیایی',
+    it: 'ایتالیایی',
+    ja: 'ژاپنی',
+    ka: 'گرجی',
+    kk: 'قزاقی',
+    kn: 'کندا',
+    ko: 'کره ای',
+    ky: 'قرقیزی',
+    lt: 'لیتوانیایی',
+    lv: 'لتونیایی',
+    mi: 'مائوری',
+    mk: 'مقدونی',
+    mn: 'مغولی',
+    mr: 'مراتی',
+    ms: 'مالایی',
+    mt: 'مالتی',
+    nb: 'نروژی',
+    nl: 'هلندی',
+    pa: 'پنجابی',
+    pl: 'لهستانی',
+    ps: 'پشتو',
+    pt: 'پرتغالی',
+    ro: 'رومانیایی',
+    ru: 'روسی',
+    sk: 'اسلواکی',
+    sl: 'اسلوونیایی',
+    sq: 'آلبانیایی',
+    sv: 'سوئدی',
+    sw: 'سواحلی',
+    ta: 'تامیلی',
+    te: 'تلوگو',
+    th: 'تایلندی',
+    tl: 'تاگالوگ',
+    tr: 'ترکی',
+    tt: 'تاتاری',
+    uk: 'اوکراینی',
+    ur: 'اردو',
+    vi: 'ویتنامی',
+    xh: 'خوسایی',
+    zh: 'چینی',
+    zu: 'زولو'
+  };
 
 function translate(dstlang, subject) {
   let data = {
@@ -43,7 +96,7 @@ function translate(dstlang, subject) {
   $.ajax(settings)
     .done(function(response) {
       let src_lang = $("#srclanguage").val();
-      src_lang = src_lang + ' - ' + getLanguageName(response.source_lang);
+      src_lang = 'خودکار' + ' - ' + languages[response.source_lang];
       $("#srclanguage").val(src_lang);
       $("#dsttext").val(response.translated);
       $.mobile.loading("hide");
